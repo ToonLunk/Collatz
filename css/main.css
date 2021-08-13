@@ -26,7 +26,7 @@ body {
     margin-right: auto;
     /* styling */
     background-color: #80A17D;
-    padding: 12px;
+    padding: 20px;
     /* border */
     border-radius: 10px;
     box-shadow: 3px 3px 6px #2A2828;
@@ -42,12 +42,14 @@ body {
     /* styling */
     font-size: 20px;
     color: #2A2828;
+    background-color: #F5F1ED;
+    border-radius: 10px;
 }
 
 #inputDiv #numberToCalc {
     /* positioning */
     margin-top: 12px;
-    width: 60%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -55,9 +57,11 @@ body {
     background-color: #F5F1ED;
     height: 20px;
     font-size: 15px;
-
 }
 
+#numberToCalc::placeholder {
+    text-align: center;
+}
 /* the main, where the new numbers are */
 main {
     /* positioning */
@@ -79,7 +83,7 @@ main {
     /* positioning */
     margin-left: auto;
     margin-right: auto;
-    max-width: 60%;
+    width: 60%;
     /* styling */
     background-color: #F5F1ED;
     margin-bottom: 6px;
