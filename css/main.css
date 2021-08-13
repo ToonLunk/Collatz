@@ -1,6 +1,14 @@
+* {
+    text-decoration: none;
+}
+
+a {
+    color : inherit;
+}
+
 body {
     background-color: #FF9A5C;
-    font-family: 'Abel', sans-serif;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 /* the input div */
@@ -17,10 +25,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     /* styling */
-    background-color: #B7CDB8;
+    background-color: #80A17D;
     padding: 12px;
     /* border */
     border-radius: 10px;
+    box-shadow: 3px 3px 6px #2A2828;
 }
 
 #inputDiv label {
@@ -32,23 +41,21 @@ body {
     padding: 6px;
     /* styling */
     font-size: 20px;
-    
+    color: #2A2828;
 }
 
 #inputDiv #numberToCalc {
     /* positioning */
-    margin-left: 30%;
-    width: 30%;
+    margin-top: 12px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     /* styling */
-    background-color: #F5F5F5;
+    background-color: #F5F1ED;
     height: 20px;
     font-size: 15px;
 
-}
-
-#submitNumBtn {
-    height: 30px;
-    border-radius: 10px;
 }
 
 /* the main, where the new numbers are */
@@ -56,14 +63,15 @@ main {
     /* positioning */
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 12px;
+    margin-bottom: 240px;
     width: 60%;
     /* styling */
-    background-color: #B7CDB8;
+    background-color: #80A17D;
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 12px;
-
+    box-shadow: 3px 3px 6px #2A2828;
 }
 
 /* the new numbers that are created */
@@ -73,7 +81,7 @@ main {
     margin-right: auto;
     max-width: 60%;
     /* styling */
-    background-color: #F5F5F5;
+    background-color: #F5F1ED;
     margin-bottom: 6px;
     font-size: 1.2rem;
     padding: 10px;
@@ -92,4 +100,17 @@ main {
 .numberNode span {
     display: inline;
     float: right;
+}
+
+/* the footer */
+footer {
+    text-align: center;
+    margin-top: 10rem;
+    width: 100%;
+    background-color: #2A2828;
+
+    color: #F5F1ED;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
