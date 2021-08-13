@@ -10,6 +10,3 @@ The idea for this program came after watching a video about the Collatz Conjectu
 
 Resources:
 https://en.wikipedia.org/wiki/Collatz_conjecture
-
-GitHub listing: 
-https://toonlunk.github.io/Collatz/
