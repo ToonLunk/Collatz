@@ -4,7 +4,6 @@ function enterNum() {
     const main = document.getElementById("main"); // assign main to a variable to append the div
     main.textContent = '';
 
-    //test
     let userInput = 0; // initialize (or re-initialize) the input
     userInput = parseInt(document.getElementById("numberToCalc").value); // get the number from input
     console.log("enterNum() finished; current number is: " + userInput);
