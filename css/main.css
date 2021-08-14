@@ -25,11 +25,13 @@ body {
     margin-left: auto;
     margin-right: auto;
     /* styling */
+    margin-top: 12px;
     background-color: #80A17D;
     padding: 20px;
     /* border */
-    border-radius: 10px;
-    box-shadow: 3px 3px 6px #2A2828;
+    border-radius: 12px 12px 2px 2px;
+    box-shadow: 6px 6px 2px #2A2828;
+
 }
 
 #inputDiv label {
@@ -49,7 +51,7 @@ body {
 #inputDiv #numberToCalc {
     /* positioning */
     margin-top: 12px;
-    width: 80%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -68,14 +70,15 @@ main {
     margin-left: auto;
     margin-right: auto;
     margin-top: 12px;
-    margin-bottom: 240px;
+    margin-bottom: 120px;
     width: 60%;
     /* styling */
     background-color: #80A17D;
-    border-radius: 10px;
+    border-radius: 2px 2px 12px 12px;
     padding-top: 20px;
     padding-bottom: 12px;
-    box-shadow: 3px 3px 6px #2A2828;
+    box-shadow: 6px 6px 2px 2px #2A2828;
+
 }
 
 /* the new numbers that are created */
@@ -111,10 +114,46 @@ footer {
     text-align: center;
     margin-top: 10rem;
     width: 100%;
-    background-color: #2A2828;
+    background-color: rgba(42, 40, 40, 0.95);
 
     color: #F5F1ED;
     position: fixed;
     bottom: 0;
     left: 0;
+    box-shadow: 10px 10px 10px 10px #2A2828;
+}
+
+/* media queries */
+@media screen and (max-width: 600px) {
+    #inputDiv { /* make the top bar fullscreen when on mobile/small screen */
+        width: 100%;
+    }
+
+    #inputDiv form {
+        padding: 6px;
+        border-radius: 0px;
+        margin-top: 0;
+    }
+
+    #inputDiv label {
+        font-size: 14px;
+    }
+    
+    main { /* make the main content area fullscreen when on mobile/small screen */
+        width: 80%;
+        padding-top: 6px;
+        padding-bottom: 2px;
+    }
+
+    .numberNode { /* make the nodes larger when on mobile/small screen */
+        width: 60%;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-top: 1px;
+        padding-bottom: 3px;
+    }
+
+    .numberNode p {
+        font-size: 14px;
+    }
 }

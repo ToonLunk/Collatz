@@ -9,19 +9,17 @@ function enterNum() {
     try {
         userInput = BigInt(document.getElementById("numberToCalc").value); // get the number from input
     } catch (error) {
-        console.warn("Error! This is not a (valid) number. Type of input: " + typeof (userInput) +
-            "Using 7 instead, because why not?");
-        console.log("This is not a number. Please use a real number next time. " +
-            "Try 7. 7 is a real number.");
+        console.warn("(enterNum()): Error! This is not a (valid) number. Type of input: " + typeof (userInput) +
+            " - should be: BigInt. If this says it's a type of BigInt, it's probably NaN.");
         return;
     }
-    console.log("enterNum() finished; current number is: " + userInput);
+    console.log("(enterNum()): Finished. Current number is: " + userInput);
 
     if (typeof (userInput) != 'bigint' || userInput <= 0) {
         return;
     }
 
-    console.log("Alright, here we go! the type of NUMBER IS: " + typeof (userInput));
+    console.log("(enterNum()): The type of NUMBER/BIGINT IS: " + typeof (userInput));
     collatz(userInput); // run the number through createDiv()
 }
 
@@ -47,28 +45,27 @@ function createDiv(num, symbol) {
     newDiv.appendChild(newDivText); // append the p element to the div
     newDiv.appendChild(newDivSymbol); // append the span to the div
     main.appendChild(newDiv); // append the div to the main element
-
-    console.log("createDiv() finished; appended a new div with number: " + num);
 }
 
-function updateCounter(counter) {
+function newNode(counter, phrase) {
     const main = document.getElementById("main"); // assign main to a variable to append the div
     let newDiv = document.createElement("div"); // create a new div
     let newDivText = document.createElement("p"); // create a new paragraph
 
     // set the text of the p to the counter
-    newDivText.innerHTML = ("Nodes in this chain: " + counter);
+    newDivText.innerHTML = (phrase + counter);
     newDiv.appendChild(newDivText);
     newDiv.classList.add("numberNode");
     main.prepend(newDiv);
-    console.log("OK");
+    console.log("(newNode()): OK, DONE!");
 }
 
 function collatz(num) {
-    console.log("This will only show once... if not a loop.");
+    console.log("(collatz()): This will only show once... if not a loop.");
     let counter = 0; // total of how many numbers in this chain
     let lastNum = 0; // to determine if it's larger or smaller than the last number
     let symbol = ""; // to display if the number went up or down
+    let largest = 0; // to display the largest number encountered
     while (true) {
 
         if (num > lastNum) { // if greater than the last number, return a plus symbol
@@ -77,15 +74,22 @@ function collatz(num) {
             symbol = "(-)"; // if less than the last number, return a minus symbol
         }
 
+        if (num > largest) { // checks to see if this new number is larger than the last biggest number
+            console.log("(collatz()): Replacing " + largest + " with: " + num + " for the largest number.");
+            largest = num;
+        }
+
         counter++;
-        console.log("Numbers crossed: " + counter);
-        lastNum = num;
+        lastNum = num; // remember the current number for next time
 
         createDiv(num, symbol); // create a div with this number and its symbol
 
         if (num == 1n) {
-            console.log("Found a one (1). It's all over!");
-            updateCounter(counter)
+            console.log("(collatz()): Found a one (1). It's all over!");
+            console.log("collatz() Numbers encountered: " + counter);
+
+            newNode(counter, "Nodes in this chain: ");
+            newNode(largest, "Largest Number in chain: ");
             return; // if the number is 1, the loop is complete
         };
         if (num % 2n == 1n) { // if the number is odd, perform this operation
