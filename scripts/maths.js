@@ -52,6 +52,9 @@ function newNode(counter, phrase) {
     let newDiv = document.createElement("div"); // create a new div
     let newDivText = document.createElement("p"); // create a new paragraph
 
+    counter = counter.toLocaleString('en'); // add commas and separators to the number
+
+
     // set the text of the p to the counter
     newDivText.innerHTML = (phrase + counter);
     newDiv.appendChild(newDivText);
