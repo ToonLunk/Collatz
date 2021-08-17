@@ -86,7 +86,7 @@ function collatz(num) {
 
         if (num == 1n) {
             console.log("(collatz()): Found a one (1). It's all over!");
-            console.log("collatz() Numbers encountered: " + counter);
+            console.log("(collatz()) Numbers encountered: " + counter);
 
             newNode(counter, "Nodes in this chain: ");
             newNode(largest, "Largest Number in chain: ");
